@@ -36,12 +36,13 @@ typedef void(^FBShareCallBack)(BOOL success);
 /**
  * Facebook登录
  * @param permissions 权限  必须
- * @param app_associated_bussiness facebook 应用是否有关联到 business（facebook商务管理平台），如果有，则允许一个 facebook 用户从（该 business 关联的）多个 facebook 应用登录返回的瑞雪账号信息相同。如果facebook 应用未关联 business，而登录时此字段传 true，则会返回报错。
+ * @param extDic 扩展字段，可传nil
+ * ！app_associated_bussiness facebook 应用是否有关联到 business（facebook商务管理平台），如果有，则允许一个 facebook 用户从（该 business 关联的）多个 facebook 应用登录返回的瑞雪账号信息相同。如果facebook 应用未关联 business，而登录时此字段传 true，则会返回报错    #BOOL类型
  * @param migrate_args 任意合法的 json 类型, 比如 string, nujber，账号迁移用的参数, 调用 CP account-query 及 account-queryandbind 接口时透传给 CP  非必须
  * @param sign_fields 指定对登录成功后返回的特定字段, 使用 CPKEY 计算签名. CP 服务器可重新计算签名并与登录返回的签名比对, 作为对瑞雪登录数据的校验. 支持的字段包括: nickname, avatar, openid, region, sex, age, 计算签名的逻辑会对指定字段进行排序, 此处传参与顺序无关。类型为字符串数组 @[@"nickname",@"avatar"]  非必须
  */
 - (void)FBLoginWithPermissions:(NSArray *)permissions
-      app_associated_bussiness:(BOOL)app_associated_bussiness
+                        extDic:(NSMutableDictionary *)extDic
                   migrate_args:(id _Nullable)migrate_args
                    sign_fields:(NSArray * _Nullable)sign_fields;
 
