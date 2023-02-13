@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   
   s.platform = :ios, '9.0'
-  s.dependency 'FBSDKLoginKit', '~> 14.0.1'
+  s.dependency 'FBSDKLoginKit'
   s.dependency 'FBSDKShareKit', '~> 14.0.1'
   
 end
