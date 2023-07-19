@@ -59,6 +59,13 @@ typedef void(^FBShareCallBack)(BOOL success);
 - (void)FBShareWithShareInfo:(NSDictionary *)shareInfo
                     complete:(FBShareCallBack)complete;
 
+/**
+ * Messenger分享
+ * @param shareInfo 获取分享信息返回的内容  必须
+ */
+- (void)messengerShareWithShareInfo:(NSDictionary *)shareInfo
+                           complete:(FBShareCallBack)complete;
+
 @end
 
 NS_ASSUME_NONNULL_END
