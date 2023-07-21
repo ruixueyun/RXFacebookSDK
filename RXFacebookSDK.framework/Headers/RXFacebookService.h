@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <RXSDK_Pure/RXSDK_Pure.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -54,17 +55,25 @@ typedef void(^FBShareCallBack)(BOOL success);
 #pragma mark -- <分享>
 /**
  * Facebook分享
+ * 推荐使用 FBShare:complete
  * @param shareInfo 获取分享信息返回的内容  必须
  */
 - (void)FBShareWithShareInfo:(NSDictionary *)shareInfo
-                    complete:(FBShareCallBack)complete;
+                    complete:(FBShareCallBack)complete DEPRECATED_MSG_ATTRIBUTE("use FBShare:complete: instead");;
+
+/**
+ * Facebook分享
+ * @param shareInfo 获取分享信息返回的内容  必须
+ */
+- (void)FBShare:(NSDictionary *)shareInfo
+       complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 /**
  * Messenger分享
  * @param shareInfo 获取分享信息返回的内容  必须
  */
-- (void)messengerShareWithShareInfo:(NSDictionary *)shareInfo
-                           complete:(FBShareCallBack)complete;
+- (void)messengerShare:(NSDictionary *)shareInfo
+              complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
 
 @end
 

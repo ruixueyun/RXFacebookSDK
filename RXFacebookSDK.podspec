@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXFacebookSDK'
-  s.version          = '3.0.3'
+  s.version          = '3.0.4'
   s.summary          = 'ruixue facebook framework.'
 
 # This description is used to generate tags and improve searc results.
@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   
   s.platform = :ios, '11.0'
-  s.dependency 'FBSDKLoginKit'
-  s.dependency 'FBSDKShareKit'
+  s.dependency 'FBSDKLoginKit', '14.1.0'
+  s.dependency 'FBSDKShareKit', '14.1.0'
   
 end
