@@ -16,3 +16,6 @@ FOUNDATION_EXPORT const unsigned char RXFacebookSDKVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <RXFacebookSDK/PublicHeader.h>
 
 #import <RXFacebookSDK/RXFacebookService.h>
+#import <RXFacebookSDK/RXFBSharePhotoContent.h>
+#import <RXFacebookSDK/RXFBShareLinkContent.h>
+#import <RXFacebookSDK/RXFBShareVideoContent.h>
