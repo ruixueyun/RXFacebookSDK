@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^FBShareCallBack)(BOOL success);
+
 @interface RXFacebookService : NSObject
 
 /**
@@ -51,6 +53,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)FBLogout;
 
 #pragma mark -- <分享>
+/**
+ * Facebook分享
+ * 推荐使用 FBShare:complete
+ * @param shareInfo 获取分享信息返回的内容  必须
+ */
+- (void)FBShareWithShareInfo:(NSDictionary *)shareInfo
+                    complete:(FBShareCallBack)complete DEPRECATED_MSG_ATTRIBUTE("use FBShareWithContent:mode:complete: instead");
+
 /**
  * Facebook分享
  * @param content 分享的结构体
