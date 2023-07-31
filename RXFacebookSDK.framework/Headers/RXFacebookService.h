@@ -27,7 +27,7 @@ typedef void(^FBShareCallBack)(BOOL success);
                   launchOptions:(NSDictionary *)launchOptions;
 
 /**
- * 跳转openURL
+ * 处理跳转参数
  */
 - (BOOL)FBApplication:(UIApplication *)application
               openURL:(NSURL *)url
@@ -55,7 +55,7 @@ typedef void(^FBShareCallBack)(BOOL success);
 #pragma mark -- <分享>
 /**
  * Facebook分享
- * 推荐使用 FBShare:complete
+ * 推荐使用 FBShareWithContent:complete
  * @param shareInfo 获取分享信息返回的内容  必须
  */
 - (void)FBShareWithShareInfo:(NSDictionary *)shareInfo
@@ -69,6 +69,14 @@ typedef void(^FBShareCallBack)(BOOL success);
 - (void)FBShareWithContent:(id)content
                       mode:(NSInteger)mode
                   complete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
+/**
+ * Messenger分享
+ * 推荐使用 messengerShareWithContent:complete
+ * @param shareInfo 获取分享信息返回的内容  必须
+ */
+- (void)messengerShareWithShareInfo:(NSDictionary *)shareInfo
+                           complete:(FBShareCallBack)complete DEPRECATED_MSG_ATTRIBUTE("use FBShareWithContent:mode:complete: instead");
 
 /**
  * Messenger分享
