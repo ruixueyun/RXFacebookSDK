@@ -52,6 +52,12 @@ typedef void(^FBShareCallBack)(BOOL success);
  */
 - (void)FBLogout;
 
+/**
+ * 同步信息
+ * 调用后会跳转到Facebook授权登录，但不会走登录回调，同步信息通过此接口回调
+ */
+- (void)syncInfoWithComplete:(void(^)(NSDictionary *response, RX_CommonRequestError *error))complete;
+
 #pragma mark -- <分享>
 /**
  * Facebook分享
