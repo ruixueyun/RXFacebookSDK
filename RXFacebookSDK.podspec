@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXFacebookSDK'
-  s.version          = '3.8.0'
+  s.version          = '3.8.1'
   s.summary          = 'ruixue facebook framework.'
 
 # This description is used to generate tags and improve searc results.
